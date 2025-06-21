@@ -1,5 +1,6 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+
 user_main_keyboard = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="🍴 Меню")],
@@ -9,6 +10,7 @@ user_main_keyboard = ReplyKeyboardMarkup(
     resize_keyboard=True,
     is_persistent=True
 )
+
 
 address_keyboard = ReplyKeyboardMarkup(
     keyboard=[
@@ -31,5 +33,20 @@ back_user_main_keyboard = ReplyKeyboardMarkup(
     is_persistent=True
 )
 
-phone_number_share = KeyboardButton(text="📞 Отправить номер телефона", request_contact=True)
-location_share = KeyboardButton(text="📍 Отправить геолокацию", request_location=True)
+
+phone_number_share = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text="📞 Share phone number", request_contact=True)]
+    ],
+    resize_keyboard=True,
+    one_time_keyboard=True
+)
+
+# Location keyboard
+location_share = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text="📍 Share location", request_location=True)]
+    ],
+    resize_keyboard=True,
+    one_time_keyboard=True
+)
